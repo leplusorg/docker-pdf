@@ -1,4 +1,4 @@
-# pdftk
+# PDF
 
 Docker container to run PDF manipulation utitilies (pdftk, ghostscript...).
 
@@ -9,7 +9,7 @@ Assuming that you have two PDF files `foo.pdf` and `bar.pdf` in your current wor
 ### Mac/Linux
 
 ```
-$ docker run --rm -it --user="$(id -u):$(id -g)" --net=none -v "$(pwd):/tmp" thomasleplus/pdftk pdftk /tmp/foo.pdf /tmp/bar.pdf cat output /tmp/foobar.pdf
+$ docker run --rm -it --user="$(id -u):$(id -g)" --net=none -v "$(pwd):/tmp" thomasleplus/pdf pdftk /tmp/foo.pdf /tmp/bar.pdf cat output /tmp/foobar.pdf
 ```
 
 ### Windows
@@ -17,13 +17,13 @@ $ docker run --rm -it --user="$(id -u):$(id -g)" --net=none -v "$(pwd):/tmp" tho
 In `cmd`:
 
 ```
-$ docker run --rm -it --net=none -v "%cd%:/tmp" thomasleplus/pdftk pdftk /tmp/foo.pdf /tmp/bar.pdf cat output /tmp/foobar.pdf
+$ docker run --rm -it --net=none -v "%cd%:/tmp" thomasleplus/pdf pdftk /tmp/foo.pdf /tmp/bar.pdf cat output /tmp/foobar.pdf
 ```
 
 In PowerShell:
 
 ```
-$ docker run --rm -it --net=none -v "${PWD}:/tmp" thomasleplus/pdftk pdftk /tmp/foo.pdf /tmp/bar.pdf cat output /tmp/foobar.pdf
+$ docker run --rm -it --net=none -v "${PWD}:/tmp" thomasleplus/pdf pdftk /tmp/foo.pdf /tmp/bar.pdf cat output /tmp/foobar.pdf
 ```
 
 ## Help
@@ -31,5 +31,5 @@ $ docker run --rm -it --net=none -v "${PWD}:/tmp" thomasleplus/pdftk pdftk /tmp/
 To know more command line options of one of the pdftk command:
 
 ```
-$ docker run --rm -it --net=none thomasleplus/pdftk pdftk -h
+$ docker run --rm -it --net=none thomasleplus/pdf pdftk -h
 ```
