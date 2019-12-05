@@ -9,13 +9,13 @@ Assuming that you have a PDF file `foo.pdf` and you want to extract the first pa
 ### Mac/Linux
 
 ```
-cat foo.pdf | docker run --rm -it --net=none thomasleplus/pdf pdftk - cat output - > bar.pdf 
+cat foo.pdf | docker run --rm -i --net=none thomasleplus/pdf pdftk - cat output - > bar.pdf 
 ```
 
 ### Windows
 
 ```
-type foo.pdf | docker run --rm -it --net=none thomasleplus/pdf pdftk - cat output - > bar.pdf 
+type foo.pdf | docker run --rm -i --net=none thomasleplus/pdf pdftk - cat output - > bar.pdf 
 ```
 
 ## Example requiring the filesystem
@@ -47,5 +47,5 @@ docker run --rm -t --net=none -v "${PWD}:/tmp" thomasleplus/pdf pdftk /tmp/foo.p
 To know more command line options of one of the pdftk command:
 
 ```
-docker run --rm -it --net=none thomasleplus/pdf pdftk -h
+docker run --rm --net=none thomasleplus/pdf pdftk -h
 ```
