@@ -52,4 +52,4 @@ docker run --rm --net=none thomasleplus/pdf pdftk -h
 
 ## Request new tool
 
-Please use this link to request that a new tool be added to the image: [](issues/new?assignees=thomasleplus&labels=enhancement&template=feature_request.md&title=%5BFEAT%5D)
+Please use [this link](https://github.com/thomasleplus/docker-pdf/issues/new?assignees=thomasleplus&labels=enhancement&template=feature_request.md&title=%5BFEAT%5D) to request that a new tool be added to the image.
