@@ -2,6 +2,11 @@
 
 Docker container to run PDF manipulation utitilies (pdftk, ghostscript...).
 
+![Docker Stars](https://img.shields.io/docker/stars/thomasleplus/pdf.svg)
+![Docker Pulls](https://img.shields.io/docker/pulls/thomasleplus/pdf.svg)
+![Docker Automated](https://img.shields.io/docker/automated/thomasleplus/pdf.svg)
+![Docker Build](https://img.shields.io/docker/build/thomasleplus/pdf.svg)
+
 ## Example not using the filesystem
 
 Assuming that you have a PDF file `foo.pdf` and you want to extract the first page to `bar.pdf`:
