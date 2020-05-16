@@ -7,6 +7,7 @@ Docker container to run PDF manipulation utitilies (pdftk, ghostscript...).
 ![Docker Pulls](https://img.shields.io/docker/pulls/thomasleplus/pdf)
 ![Docker Automated](https://img.shields.io/docker/cloud/automated/thomasleplus/pdf)
 ![Docker Build](https://img.shields.io/docker/cloud/build/thomasleplus/pdf)
+![Docker Version](https://img.shields.io/docker/v/thomasleplus/pdf?sort=semver)
 
 ## Example not using the filesystem
 
