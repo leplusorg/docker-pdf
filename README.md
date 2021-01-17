@@ -2,12 +2,12 @@
 
 Docker container to run PDF manipulation utitilies (pdftk, ghostscript...).
 
-![Docker Build](https://github.com/thomasleplus/docker-pdf/workflows/Docker/badge.svg)
-![Docker Stars](https://img.shields.io/docker/stars/thomasleplus/pdf)
-![Docker Pulls](https://img.shields.io/docker/pulls/thomasleplus/pdf)
-![Docker Automated](https://img.shields.io/docker/cloud/automated/thomasleplus/pdf)
-![Docker Build](https://img.shields.io/docker/cloud/build/thomasleplus/pdf)
-![Docker Version](https://img.shields.io/docker/v/thomasleplus/pdf?sort=semver)
+[![Docker Build](https://github.com/thomasleplus/docker-pdf/workflows/Docker/badge.svg)](https://github.com/thomasleplus/docker-pdf/actions?query=workflow:"Docker")
+[![Docker Stars](https://img.shields.io/docker/stars/thomasleplus/pdf)](https://hub.docker.com/r/thomasleplus/pdf)
+[![Docker Pulls](https://img.shields.io/docker/pulls/thomasleplus/pdf)](https://hub.docker.com/r/thomasleplus/pdf)
+[![Docker Automated](https://img.shields.io/docker/cloud/automated/thomasleplus/pdf)](https://hub.docker.com/r/thomasleplus/pdf)
+[![Docker Build](https://img.shields.io/docker/cloud/build/thomasleplus/pdf)](https://hub.docker.com/r/thomasleplus/pdf)
+[![Docker Version](https://img.shields.io/docker/v/thomasleplus/pdf?sort=semver)](https://hub.docker.com/r/thomasleplus/pdf)
 
 ## Example not using the filesystem
 
