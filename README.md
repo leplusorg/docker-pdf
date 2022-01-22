@@ -13,15 +13,15 @@ Docker container to run PDF manipulation utitilies (pdftk, ghostscript...).
 
 Assuming that you have a PDF file `foo.pdf` and you want to extract the first page to `bar.pdf`:
 
-### Mac/Linux
+**Mac/Linux**
 
-```
+```bash
 cat foo.pdf | docker run --rm -i --net=none leplusorg/pdf pdftk - cat output - > bar.pdf 
 ```
 
-### Windows
+**Windows**
 
-```
+```batch
 type foo.pdf | docker run --rm -i --net=none leplusorg/pdf pdftk - cat output - > bar.pdf 
 ```
 
@@ -29,23 +29,23 @@ type foo.pdf | docker run --rm -i --net=none leplusorg/pdf pdftk - cat output - 
 
 Assuming that you have two PDF files `foo.pdf` and `bar.pdf` in your current working directory and you want to join them into a single `foobar.pdf`:
 
-### Mac/Linux
+**Mac/Linux**
 
-```
+```bash
 docker run --rm -t --user="$(id -u):$(id -g)" --net=none -v "$(pwd):/tmp" leplusorg/pdf pdftk /tmp/foo.pdf /tmp/bar.pdf cat output /tmp/foobar.pdf
 ```
 
-### Windows
+**Windows**
 
 In `cmd`:
 
-```
+```batch
 docker run --rm -t --net=none -v "%cd%:/tmp" leplusorg/pdf pdftk /tmp/foo.pdf /tmp/bar.pdf cat output /tmp/foobar.pdf
 ```
 
 In PowerShell:
 
-```
+```pwsh
 docker run --rm -t --net=none -v "${PWD}:/tmp" leplusorg/pdf pdftk /tmp/foo.pdf /tmp/bar.pdf cat output /tmp/foobar.pdf
 ```
 
@@ -53,7 +53,7 @@ docker run --rm -t --net=none -v "${PWD}:/tmp" leplusorg/pdf pdftk /tmp/foo.pdf 
 
 To know more command line options of one of the pdftk command:
 
-```
+```bash
 docker run --rm --net=none leplusorg/pdf pdftk -h
 ```
 
