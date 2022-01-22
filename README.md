@@ -51,7 +51,7 @@ docker run --rm -t --net=none -v "${PWD}:/tmp" leplusorg/pdf pdftk /tmp/foo.pdf 
 
 ## Help
 
-To know more command line options of one of the pdftk command:
+To know more command-line options of one of the pdftk command:
 
 ```bash
 docker run --rm --net=none leplusorg/pdf pdftk -h
