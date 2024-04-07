@@ -5,8 +5,6 @@ Docker container to run PDF manipulation utitilies (pdftk, ghostscript...).
 [![Docker Build](https://github.com/leplusorg/docker-pdf/workflows/Docker/badge.svg)](https://github.com/leplusorg/docker-pdf/actions?query=workflow:"Docker")
 [![Docker Stars](https://img.shields.io/docker/stars/leplusorg/pdf)](https://hub.docker.com/r/leplusorg/pdf)
 [![Docker Pulls](https://img.shields.io/docker/pulls/leplusorg/pdf)](https://hub.docker.com/r/leplusorg/pdf)
-[![Docker Automated](https://img.shields.io/docker/cloud/automated/leplusorg/pdf)](https://hub.docker.com/r/leplusorg/pdf)
-[![Docker Build](https://img.shields.io/docker/cloud/build/leplusorg/pdf)](https://hub.docker.com/r/leplusorg/pdf)
 [![Docker Version](https://img.shields.io/docker/v/leplusorg/pdf?sort=semver)](https://hub.docker.com/r/leplusorg/pdf)
 
 ## Example not using the filesystem
