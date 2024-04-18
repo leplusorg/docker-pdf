@@ -1,6 +1,10 @@
 # Package pdftk requires alpine 3.8.5 or below
 FROM alpine:3.8.5@sha256:2bb501e6173d9d006e56de5bce2720eb06396803300fe1687b58a7ff32bf4c14
 
+HEALTHCHECK NONE
+
+ENTRYPOINT []
+
 # hadolint ignore=DL3018
 RUN apk --update --no-cache add \
     ghostscript \
@@ -9,3 +13,13 @@ RUN apk --update --no-cache add \
     pdftk \
     qpdf \
     && rm -rf /var/cache/apk/*
+
+ARG USER=default
+
+ENV HOME "/home/${USER}"
+
+RUN adduser -D "${USER}"
+
+USER "${USER}"
+
+WORKDIR "${HOME}"
