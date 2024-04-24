@@ -1,5 +1,4 @@
-# Package pdftk requires alpine 3.8.5 or below
-FROM alpine:3.8.5@sha256:2bb501e6173d9d006e56de5bce2720eb06396803300fe1687b58a7ff32bf4c14
+FROM alpine:3.19.1@sha256:c5b1261d6d3e43071626931fc004f70149baeba2c8ec672bd4f27761f8e1ad6b
 
 HEALTHCHECK NONE
 
@@ -12,12 +11,23 @@ ARG USER_GECOS=Default
 
 # hadolint ignore=DL3018
 RUN apk --update --no-cache add \
+    curl \
     ghostscript \
+    jq \
     ocrmypdf \
+    openjdk21-jre-headless \
     pdfgrep \
-    pdftk \
     qpdf \
     && rm -rf /var/cache/apk/*
+
+RUN VERSION=$(curl -s -S -f https://gitlab.com/api/v4/projects/5024297/releases | jq -r '.[0].tag_name') \
+    && mkdir -p /opt/pdftk/lib \
+    && curl -s -S -f -o /opt/pdftk/lib/pdftk-all.jar \
+    "https://gitlab.com/api/v4/projects/5024297/packages/generic/pdftk-java/${VERSION}/pdftk-all.jar"
+
+COPY pdftk /usr/bin/pdftk
+
+RUN chmod 755 /usr/bin/pdftk
 
 RUN adduser \
   --home "${USER_HOME}" \
