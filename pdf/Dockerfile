@@ -20,6 +20,8 @@ RUN apk --update --no-cache add \
     qpdf \
     && rm -rf /var/cache/apk/*
 
+SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
+
 RUN VERSION=$(curl -s -S -f https://gitlab.com/api/v4/projects/5024297/releases | jq -r '.[0].tag_name') \
     && mkdir -p /opt/pdftk/lib \
     && curl -s -S -f -o /opt/pdftk/lib/pdftk-all.jar \
