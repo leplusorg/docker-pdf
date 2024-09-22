@@ -15,13 +15,13 @@ Assuming that you have a PDF file `foo.pdf` and you want to extract the first pa
 **Mac/Linux**
 
 ```bash
-cat foo.pdf | docker run --rm -i --net=none leplusorg/pdf pdftk - cat output - > bar.pdf 
+cat foo.pdf | docker run --rm -i --net=none leplusorg/pdf pdftk - cat output - > bar.pdf
 ```
 
 **Windows**
 
 ```batch
-type foo.pdf | docker run --rm -i --net=none leplusorg/pdf pdftk - cat output - > bar.pdf 
+type foo.pdf | docker run --rm -i --net=none leplusorg/pdf pdftk - cat output - > bar.pdf
 ```
 
 ## Example requiring the filesystem
