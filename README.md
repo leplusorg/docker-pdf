@@ -7,6 +7,8 @@ Docker container to run PDF manipulation utitilies (pdftk, ghostscript...).
 [![Docker Stars](https://img.shields.io/docker/stars/leplusorg/pdf)](https://hub.docker.com/r/leplusorg/pdf)
 [![Docker Pulls](https://img.shields.io/docker/pulls/leplusorg/pdf)](https://hub.docker.com/r/leplusorg/pdf)
 [![Docker Version](https://img.shields.io/docker/v/leplusorg/pdf?sort=semver)](https://hub.docker.com/r/leplusorg/pdf)
+[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/10072/badge)](https://bestpractices.coreinfrastructure.org/projects/10072)
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/leplusorg/docker-pdf/badge)](https://securityscorecards.dev/viewer/?uri=github.com/leplusorg/docker-pdf)
 
 ## Example not using the filesystem
 
@@ -15,13 +17,13 @@ Assuming that you have a PDF file `foo.pdf` and you want to extract the first pa
 **Mac/Linux**
 
 ```bash
-cat foo.pdf | docker run --rm -i --net=none leplusorg/pdf pdftk - cat output - > bar.pdf 
+cat foo.pdf | docker run --rm -i --net=none leplusorg/pdf pdftk - cat output - > bar.pdf
 ```
 
 **Windows**
 
 ```batch
-type foo.pdf | docker run --rm -i --net=none leplusorg/pdf pdftk - cat output - > bar.pdf 
+type foo.pdf | docker run --rm -i --net=none leplusorg/pdf pdftk - cat output - > bar.pdf
 ```
 
 ## Example requiring the filesystem
@@ -55,6 +57,48 @@ To know more command-line options of one of the pdftk command:
 ```bash
 docker run --rm --net=none leplusorg/pdf pdftk -h
 ```
+
+## Software Bill of Materials (SBOM)
+
+To get the SBOM for the latest image (in SPDX JSON format), use the
+following command:
+
+```bash
+docker buildx imagetools inspect leplusorg/pdf --format '{{ json (index .SBOM "linux/amd64").SPDX }}'
+```
+
+Replace `linux/amd64` by the desired platform (`linux/amd64`, `linux/arm64` etc.).
+
+### Sigstore
+
+[Sigstore](https://docs.sigstore.dev) is trying to improve supply
+chain security by allowing you to verify the origin of an
+artifcat. You can verify that the jar that you use was actually
+produced by this repository. This means that if you verify the
+signature of the ristretto jar, you can trust the integrity of the
+whole supply chain from code source, to CI/CD build, to distribution
+on Maven Central or whever you got the jar from.
+
+You can use the following command to verify the latest image using its
+sigstore signature attestation:
+
+```bash
+cosign verify leplusorg/pdf --certificate-identity-regexp 'https://github\.com/leplusorg/docker-pdf/\.github/workflows/.+' --certificate-oidc-issuer 'https://token.actions.githubusercontent.com'
+```
+
+The output should look something like this:
+
+```text
+Verification for index.docker.io/leplusorg/xml:main --
+The following checks were performed on each of these signatures:
+  - The cosign claims were validated
+  - Existence of the claims in the transparency log was verified offline
+  - The code-signing certificate was verified using trusted certificate authority certificates
+
+[{"critical":...
+```
+
+For instructions on how to install `cosign`, please read this [documentation](https://docs.sigstore.dev/cosign/system_config/installation/).
 
 ## Request new tool
 
