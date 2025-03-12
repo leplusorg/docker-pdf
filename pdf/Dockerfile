@@ -9,6 +9,8 @@ ARG USER_HOME=/home/default
 ARG USER_ID=1000
 ARG USER_GECOS=Default
 
+SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
+
 # hadolint ignore=DL3018
 RUN apk --update --no-cache add \
     curl \
@@ -19,8 +21,6 @@ RUN apk --update --no-cache add \
     pdfgrep \
     qpdf \
     && rm -rf /var/cache/apk/*
-
-SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 
 RUN VERSION=$(curl -s -S -f https://gitlab.com/api/v4/projects/5024297/releases | jq -r '.[0].tag_name') \
     && mkdir -p /opt/pdftk/lib \
