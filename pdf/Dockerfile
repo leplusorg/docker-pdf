@@ -27,12 +27,14 @@ RUN apk -U upgrade \
       apk -u list ; \
       exit 1 ; \
     fi \
+    && apk cache clean \
     && rm -rf /var/cache/apk/*
 
 RUN VERSION=$(curl -s -S -f https://gitlab.com/api/v4/projects/5024297/releases | jq -r '.[0].tag_name') \
     && mkdir -p /opt/pdftk/lib \
     && curl -s -S -f -o /opt/pdftk/lib/pdftk-all.jar \
-    "https://gitlab.com/api/v4/projects/5024297/packages/generic/pdftk-java/${VERSION}/pdftk-all.jar"
+    "https://gitlab.com/api/v4/projects/5024297/packages/generic/pdftk-java/${VERSION}/pdftk-all.jar" \
+    && chmod -R o+rX /opt/pdftk \
 
 COPY pdftk /usr/bin/pdftk
 
