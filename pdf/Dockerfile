@@ -34,7 +34,7 @@ RUN VERSION=$(curl -s -S -f https://gitlab.com/api/v4/projects/5024297/releases 
     && mkdir -p /opt/pdftk/lib \
     && curl -s -S -f -o /opt/pdftk/lib/pdftk-all.jar \
     "https://gitlab.com/api/v4/projects/5024297/packages/generic/pdftk-java/${VERSION}/pdftk-all.jar" \
-    && chmod -R o+rX /opt/pdftk \
+    && chmod -R o+rX /opt/pdftk
 
 COPY pdftk /usr/bin/pdftk
 
