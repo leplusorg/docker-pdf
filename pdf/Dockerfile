@@ -14,7 +14,7 @@ SHELL ["/bin/ash", "-euo", "pipefail", "-c"]
 # hadolint ignore=DL3019
 RUN apk -U upgrade \
     && apk add \
-    curl=8.12.1-r0 \
+    curl=8.12.1-r1 \
     ghostscript=10.04.0-r0 \
     jq=1.7.1-r0 \
     ocrmypdf=16.4.3-r0 \
