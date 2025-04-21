@@ -18,7 +18,7 @@ RUN apk -U upgrade \
     ghostscript=10.04.0-r0 \
     jq=1.7.1-r0 \
     ocrmypdf=16.4.3-r0 \
-    openjdk21-jre-headless=21.0.6_p7-r0 \
+    openjdk21-jre-headless=21.0.7_p6-r0 \
     pdfgrep=2.2.0-r0 \
     py3-pip=24.3.1-r0 \
     python3=3.12.10-r0 \
