@@ -20,7 +20,7 @@ RUN apk -U upgrade \
     ocrmypdf=16.4.3-r0 \
     openjdk21-jre-headless=21.0.7_p6-r0 \
     pdfgrep=2.2.0-r0 \
-    poppler-utils=25.04.0-r0 \
+    poppler-utils=24.02.0-r2 \
     py3-pip=24.3.1-r0 \
     python3=3.12.10-r0 \
     qpdf=11.9.1-r0 \
