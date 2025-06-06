@@ -22,7 +22,7 @@ RUN apk -U upgrade \
     pdfgrep=2.2.0-r0 \
     poppler-utils=24.02.0-r2 \
     py3-pip=24.3.1-r0 \
-    python3=3.12.10-r1 \
+    python3=3.12.11-r0 \
     qpdf=11.9.1-r0 \
     && if apk -u list | grep -q -e . ; then \
       apk -u list ; \
