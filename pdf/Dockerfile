@@ -1,4 +1,4 @@
-FROM alpine:3.21.3@sha256:a8560b36e8b8210634f77d9f7f9efd7ffa463e380b75e2e74aff4511df3ef88c
+FROM alpine:3.22.0@sha256:8a1f59ffb675680d47db6337b49d22281a139e9d709335b492be023728e11715
 
 HEALTHCHECK NONE
 
@@ -14,16 +14,16 @@ SHELL ["/bin/ash", "-euo", "pipefail", "-c"]
 # hadolint ignore=DL3019
 RUN apk -U upgrade \
     && apk add \
-    curl=8.12.1-r1 \
+    curl=8.14.1-r0 \
     ghostscript=10.05.1-r0 \
-    jq=1.7.1-r0 \
+    jq=1.8.0-r0 \
     ocrmypdf=16.4.3-r0 \
     openjdk21-jre-headless=21.0.7_p6-r0 \
-    pdfgrep=2.2.0-r0 \
-    poppler-utils=24.02.0-r2 \
-    py3-pip=24.3.1-r0 \
+    pdfgrep=2.2.0-r1 \
+    poppler-utils=25.04.0-r0 \
+    py3-pip=25.1.1-r0 \
     python3=3.12.11-r0 \
-    qpdf=11.9.1-r0 \
+    qpdf=12.2.0-r0 \
     && if apk -u list | grep -q -e . ; then \
       apk -u list ; \
       exit 1 ; \
