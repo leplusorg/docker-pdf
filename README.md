@@ -1,6 +1,6 @@
 # PDF
 
-Docker container to run PDF manipulation utitilies (pdftk, ghostscript, ocrmypdf, pdfgrep, qpdf...).
+Docker container with utilities to process PDF (pdftk, ghostscript, ocrmypdf, pdfgrep, qpdf...).
 
 [![Dockerfile](https://img.shields.io/badge/GitHub-Dockerfile-blue)](pdf/Dockerfile)
 [![Docker Build](https://github.com/leplusorg/docker-pdf/workflows/Docker/badge.svg)](https://github.com/leplusorg/docker-pdf/actions?query=workflow:"Docker")
