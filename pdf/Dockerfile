@@ -17,7 +17,7 @@ RUN apk -U upgrade \
     coreutils=9.7-r1 \
     curl=8.14.1-r1 \
     ghostscript=10.05.1-r0 \
-    git=2.49.0-r0 \
+    git=2.49.1-r0 \
     jq=1.8.0-r0 \
     ocrmypdf=16.4.3-r0 \
     openjdk21-jre-headless=21.0.7_p6-r0 \
