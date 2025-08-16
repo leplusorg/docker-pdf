@@ -4,4 +4,23 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: "sh -c '[ $$(id -u) -eq 1000 ] && pdftk --version'"
+    command: |
+      sh -c '
+        set -euo pipefail
+        if [ $(id -u) -ne 1000 ]; then
+          exit 1
+        fi
+        base64 --version # coreutils
+        curl --version # curl
+        git --version # git
+        gs --version # ghostscript
+        java --version # openjdk21-jre-headless
+        jq --version # jq
+        ocrmypdf --version # ocrmypdf
+        pdfgrep --version # pdfgrep
+        pdfinfo --help # poppler-utils
+        pdftk --version # pdftk-all
+        pip --version # py3-pip
+        python --version # python3
+        qpdf --version # qpdf
+      '
