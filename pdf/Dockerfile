@@ -12,8 +12,8 @@ ARG USER_GECOS=Default
 SHELL ["/bin/ash", "-euo", "pipefail", "-c"]
 
 # hadolint ignore=DL3019
-RUN apk -U upgrade \
-    && apk add \
+RUN apk upgrade --no-cache \
+    && apk add --no-cache \
     coreutils=9.7-r1 \
     curl=8.14.1-r1 \
     ghostscript=10.05.1-r0 \
@@ -26,7 +26,7 @@ RUN apk -U upgrade \
     py3-pip=25.1.1-r0 \
     python3=3.12.11-r0 \
     qpdf=12.2.0-r0 \
-    && apk cache clean \
+    && apk cache --no-cache clean \
     && rm -rf /var/cache/apk/*
 
 RUN VERSION=$(curl -s -S -f https://gitlab.com/api/v4/projects/5024297/releases | jq -r '.[0].tag_name') \
