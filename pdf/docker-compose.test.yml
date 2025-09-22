@@ -18,6 +18,7 @@ services:
         java --version # openjdk21-jre-headless
         jq --version # jq
         ocrmypdf --version # ocrmypdf
+        pandoc --version # pandoc
         pdfgrep --version # pdfgrep
         pdfinfo --help # poppler-utils
         pdftk --version # pdftk-all

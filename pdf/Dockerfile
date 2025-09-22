@@ -20,6 +20,7 @@ RUN apk upgrade --no-cache \
     jq=1.8.0-r0 \
     ocrmypdf=16.4.3-r0 \
     openjdk21-jre-headless=21.0.8_p9-r0 \
+    pandoc-cli=3.6.4-r0 \
     pdfgrep=2.2.0-r1 \
     poppler-utils=25.04.0-r0 \
     py3-pip=25.1.1-r0 \
