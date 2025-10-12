@@ -24,7 +24,7 @@ RUN apk upgrade --no-cache \
     pdfgrep=2.2.0-r1 \
     poppler-utils=25.04.0-r0 \
     py3-pip=25.1.1-r0 \
-    python3=3.12.11-r0 \
+    python3=3.12.12-r0 \
     qpdf=12.2.0-r0 \
     && apk cache --no-cache clean \
     && rm -rf /var/cache/apk/*
