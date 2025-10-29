@@ -18,6 +18,7 @@ RUN apk upgrade --no-cache \
     ghostscript=10.05.1-r0 \
     git=2.49.1-r0 \
     jq=1.8.0-r0 \
+    libreoffice=25.2.5.2-r0 \
     ocrmypdf=16.4.3-r0 \
     openjdk21-jre-headless=21.0.8_p9-r0 \
     pandoc-cli=3.6.4-r0 \
