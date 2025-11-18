@@ -22,6 +22,7 @@ RUN apk upgrade --no-cache \
     openjdk21-jre-headless=21.0.9_p10-r0 \
     pandoc-cli=3.6.4-r0 \
     pdfgrep=2.2.0-r1 \
+    pipx=1.7.1-r0 \
     poppler-utils=25.04.0-r0 \
     py3-pip=25.1.1-r0 \
     python3=3.12.12-r0 \
