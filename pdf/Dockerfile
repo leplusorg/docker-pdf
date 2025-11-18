@@ -19,7 +19,6 @@ RUN apk upgrade --no-cache \
     git=2.49.1-r0 \
     jq=1.8.1-r0 \
     libreoffice=25.2.5.2-r0 \
-    ocrmypdf=16.4.3-r0 \
     openjdk21-jre-headless=21.0.9_p10-r0 \
     pandoc-cli=3.6.4-r0 \
     pdfgrep=2.2.0-r1 \
@@ -29,6 +28,12 @@ RUN apk upgrade --no-cache \
     qpdf=12.2.0-r0 \
     && apk cache --no-cache clean \
     && rm -rf /var/cache/apk/*
+
+COPY requirements.txt /tmp/requirements.txt
+
+RUN pipx ensurepath --global \
+    && xargs -a /tmp/requirements.txt -n 1 pipx install --global \
+    && rm -f /tmp/requirements.txt
 
 RUN VERSION=$(curl -s -S -f https://gitlab.com/api/v4/projects/5024297/releases | jq -r '.[0].tag_name') \
     && mkdir -p /opt/pdftk/lib \
