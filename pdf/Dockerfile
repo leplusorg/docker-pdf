@@ -13,18 +13,18 @@ SHELL ["/bin/ash", "-euo", "pipefail", "-c"]
 
 RUN apk upgrade --no-cache \
     && apk add --no-cache \
-    coreutils=9.7-r1 \
-    curl=8.14.1-r2 \
+    coreutils=9.8-r1 \
+    curl=8.17.0-r1 \
     ghostscript=10.05.1-r0 \
-    git=2.49.1-r0 \
+    git=2.52.0-r0 \
     jq=1.8.1-r0 \
     libreoffice=25.2.5.2-r0 \
     openjdk21-jre-headless=21.0.9_p10-r0 \
-    pandoc-cli=3.6.4-r0 \
+    pandoc-cli=3.8.2.1-r0 \
     pdfgrep=2.2.0-r1 \
-    pipx=1.7.1-r0 \
+    pipx=1.8.0-r0 \
     poppler-utils=25.04.0-r0 \
-    py3-pip=25.1.1-r0 \
+    py3-pip=25.1.1-r1 \
     python3=3.12.12-r0 \
     qpdf=12.2.0-r0 \
     && apk cache --no-cache clean \
