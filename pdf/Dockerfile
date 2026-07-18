@@ -14,7 +14,7 @@ SHELL ["/bin/ash", "-euo", "pipefail", "-c"]
 RUN apk upgrade --no-cache \
     && apk add --no-cache \
     coreutils=9.8-r1 \
-    curl=8.19.0-r0 \
+    curl=8.20.0-r0 \
     ghostscript=10.06.0-r0 \
     git=2.52.0-r0 \
     jq=1.8.1-r0 \
