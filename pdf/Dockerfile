@@ -17,7 +17,7 @@ RUN apk upgrade --no-cache \
     curl=8.20.0-r0 \
     ghostscript=10.06.0-r0 \
     git=2.52.0-r0 \
-    jq=1.8.1-r0 \
+    jq=1.8.2-r0 \
     libreoffice=25.8.1.1-r5 \
     openjdk21-jre-headless=21.0.12_p8-r0 \
     pandoc-cli=3.8.2.1-r0 \
