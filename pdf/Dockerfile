@@ -32,12 +32,13 @@ RUN apk upgrade --no-cache \
 
 COPY requirements.txt /tmp/requirements.txt
 
-# Install each app from requirements.txt in its own venv, using the whole file
-# as pip constraints to also pin dependencies (lines marked "constraint").
+# Install each app from requirements.txt in its own venv, using the lines
+# marked "constraint" as pip constraints to pin some of their dependencies.
 RUN pipx ensurepath --global \
+    && sed -n -e 's/#[[:space:]]*constraint[[:space:]]*$//p' /tmp/requirements.txt > /tmp/constraints.txt \
     && sed -e '/#[[:space:]]*constraint[[:space:]]*$/d' -e 's/#.*//' /tmp/requirements.txt \
-    | xargs -n 1 pipx install --global --pip-args=--constraint=/tmp/requirements.txt \
-    && rm -f /tmp/requirements.txt
+    | xargs -n 1 pipx install --global --pip-args=--constraint=/tmp/constraints.txt \
+    && rm -f /tmp/requirements.txt /tmp/constraints.txt
 
 RUN VERSION=$(curl -s -S -f https://gitlab.com/api/v4/projects/5024297/releases | jq -r '.[0].tag_name') \
     && mkdir -p /opt/pdftk/lib \
