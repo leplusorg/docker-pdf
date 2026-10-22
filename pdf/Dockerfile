@@ -40,10 +40,16 @@ RUN pipx ensurepath --global \
     | xargs -n 1 pipx install --global --pip-args=--constraint=/tmp/constraints.txt \
     && rm -f /tmp/requirements.txt /tmp/constraints.txt
 
-RUN VERSION=$(curl -s -S -f https://gitlab.com/api/v4/projects/5024297/releases | jq -r '.[0].tag_name') \
-    && mkdir -p /opt/pdftk/lib \
+# pdftk-java is neither packaged by Alpine nor published to a repository that
+# Dependabot can track, so its version and checksum are pinned here and the
+# PDFTK Check Versions workflow reports new releases.
+ARG PDFTK_VERSION=v3.3.3
+ARG PDFTK_SHA256=a694d49bd03e1edd4c23b3ba808bc221eb8a8ccfe7bfd2a0a884b2b2fb425188
+
+RUN mkdir -p /opt/pdftk/lib \
     && curl -s -S -f -o /opt/pdftk/lib/pdftk-all.jar \
-    "https://gitlab.com/api/v4/projects/5024297/packages/generic/pdftk-java/${VERSION}/pdftk-all.jar" \
+    "https://gitlab.com/api/v4/projects/5024297/packages/generic/pdftk-java/${PDFTK_VERSION}/pdftk-all.jar" \
+    && echo "${PDFTK_SHA256}  /opt/pdftk/lib/pdftk-all.jar" | sha256sum -c - \
     && chmod -R o+rX /opt/pdftk
 
 COPY pdftk /usr/bin/pdftk

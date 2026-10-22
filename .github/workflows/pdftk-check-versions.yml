@@ -1,0 +1,42 @@
+---
+name: PDFTK Check Versions
+
+on:
+  schedule:
+    - cron: "0 0 * * 0"
+  workflow_dispatch:
+
+permissions: {}
+
+defaults:
+  run:
+    working-directory: pdf
+
+jobs:
+  pdftk-check-versions:
+    permissions:
+      # Required to clone repo
+      contents: read
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Check the version
+        shell: bash
+        run: |
+          set -euo pipefail
+          IFS=$'\n\t'
+          current_version="$(\sed -n -e 's/^ARG PDFTK_VERSION=//p' Dockerfile)"
+          if [ -z "${current_version}" ]; then
+            echo "No PDFTK_VERSION found in pdf/Dockerfile" >&2
+            exit 1
+          fi
+          latest_version="$(\curl -s -S -f https://gitlab.com/api/v4/projects/5024297/releases | \jq -r '.[0].tag_name')"
+          if [ "${current_version}" != "${latest_version}" ]; then
+            echo "pdftk-java ${current_version} -> ${latest_version}" >&2
+            exit 1
+          fi
+          echo "pdftk-java ${current_version} is up to date"
