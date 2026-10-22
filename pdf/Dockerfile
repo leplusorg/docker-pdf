@@ -15,7 +15,7 @@ RUN apk upgrade --no-cache \
     && apk add --no-cache \
     coreutils=9.8-r1 \
     curl=8.22.0-r0 \
-    ghostscript=10.06.0-r0 \
+    ghostscript=10.08.0-r0 \
     git=2.52.0-r0 \
     jq=1.8.2-r0 \
     libreoffice=25.8.1.1-r5 \
