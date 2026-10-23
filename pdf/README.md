@@ -8,8 +8,7 @@ Build context for the `leplusorg/pdf` container image. See the
 - `Dockerfile` — the image definition. System packages come from the base
   distribution's package manager and are pinned to exact versions here.
 - `docker-compose.test.yml` — the smoke test run in CI against the built image:
-  the `sut` service checks that the container runs as the non-root user (UID
-  1000) and that each bundled tool starts.
+  the `sut` service checks that the container runs as the non-root user (UID 1000) and that each bundled tool starts.
 - `requirements.txt` — the Python tools installed in the image, with their
   pinned versions. The `Dockerfile` installs each one globally with `pipx`, in
   its own virtual environment.
