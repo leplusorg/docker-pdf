@@ -19,7 +19,7 @@ RUN apk upgrade --no-cache \
     git=2.52.0-r0 \
     jq=1.8.2-r0 \
     libreoffice=25.8.1.1-r5 \
-    openjdk21-jre-headless=21.0.12_p8-r0 \
+    openjdk21-jre-headless=21.0.13.0.3_p1-r0 \
     pandoc-cli=3.8.2.1-r0 \
     pdfgrep=2.2.0-r1 \
     pipx=1.8.0-r0 \
