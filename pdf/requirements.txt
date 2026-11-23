@@ -1,1 +1,1 @@
-ocrmypdf==17.14.1
+ocrmypdf==17.14.2
